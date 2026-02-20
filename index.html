@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIX THE VIDEO | Premium Retouching Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --brand-red: #DC143C;
+        --brand-white: #ffffff;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8fafc;
+        color: #1a1a1a;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .glass-dark {
+        background: rgba(26, 26, 26, 0.8);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #DC143C 0%, #ff4d6d 50%, #b91c1c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .mesh-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #ffffff;
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(348,100%,96%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(210,100%,98%,1) 0, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(348,100%,94%,1) 0, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(0,0%,98%,1) 0, transparent 50%);
+      }
+      .blob {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(220,20,60,0.08) 0%, transparent 70%);
+        filter: blur(80px);
+        z-index: -1;
+        animation: float 20s infinite alternate;
+      }
+      @keyframes float {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(100px, 100px) scale(1.2); }
+      }
+      .canva-btn {
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .canva-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px -5px rgba(220, 20, 60, 0.3);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(220, 20, 60, 0.2);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--brand-red);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="blob" style="top: -10%; left: -10%;"></div>
+      <div class="blob" style="bottom: -10%; right: -10%; background: radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 70%);"></div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
